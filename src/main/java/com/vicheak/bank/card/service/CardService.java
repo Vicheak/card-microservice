@@ -10,4 +10,6 @@ public interface CardService {
 	
 	List<Card> getList();
 	
+	List<Card> getByCustomerId(Long customerId); 
+	
 }
