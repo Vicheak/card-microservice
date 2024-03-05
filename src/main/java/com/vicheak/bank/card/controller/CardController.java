@@ -46,8 +46,14 @@ public class CardController {
 	public ResponseEntity<List<Card>> getByCustomerId(
 			@RequestHeader("vicheakbank-correlation-id") String correlationId,
 			@PathVariable Long customerId){
-		log.debug("Correlation id found : {}", correlationId); 
-		return ResponseEntity.ok(cardService.getByCustomerId(customerId)); 
+		//log.debug("Correlation id found : {}", correlationId);
+		
+		log.debug("fetchCardDetail method start");
+		
+		List<Card> cards = cardService.getByCustomerId(customerId);
+		
+		log.debug("fetchCardDetail method end");
+		return ResponseEntity.ok(cards); 
 	}
 
 }
